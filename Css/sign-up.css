@@ -157,6 +157,11 @@ body {
   font-size: 12px;
 }
 
+.question a,
+.TC a {
+  color: blue;
+}
+
 .span1 {
   color: grey;
 }
