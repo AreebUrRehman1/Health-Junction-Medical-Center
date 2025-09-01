@@ -1,4 +1,4 @@
-body{
+body {
   margin: 0px;
   padding: 0px;
   height: 100vh;
@@ -8,28 +8,29 @@ body{
   background-color: rgb(197, 206, 207);
 }
 
-.sign-up-form{
+.sign-up-form {
   display: flex;
   flex-direction: row;
   width: 70%;
   height: 90%;
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.438);
-  background-image: linear-gradient(to bottom right,  #eaf2ff, #c3d9ff);
+  background-image: linear-gradient(to bottom right, #eaf2ff, #c3d9ff);
   border-radius: 25px;
 }
 
-.left-section, .right-section{
+.left-section,
+.right-section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
 }
 
-.right-section{
+.right-section {
   justify-content: space-around;
 }
 
-.moto{
+.moto {
   text-align: center;
   border: 1px solid #404040;
   font-size: 13px;
@@ -42,24 +43,24 @@ body{
   margin-left: 15px;
 }
 
-.create-account{
+.create-account {
   display: flex;
   flex-direction: column;
   row-gap: 20px;
 }
 
-.text{
+.text {
   font-size: 30px;
   text-align: center;
 }
 
-.text2{
+.text2 {
   font-size: 14px;
   text-align: center;
   color: grey;
 }
 
-.sign-up-details{
+.sign-up-details {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
@@ -68,27 +69,27 @@ body{
   margin: 10px auto;
 }
 
-.detail{
+.detail {
   font-size: 11px;
   margin-left: 11px;
 }
 
-.input-text{
+.input-text {
   padding: 8px 15px;
   font-size: 13px;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 15px;
   width: 250px;
 }
-  
-.sign-up-btn{
+
+.sign-up-btn {
   display: flex;
   flex-direction: column;
   row-gap: 10px;
   align-items: center;
 }
 
-.submit-btn{
+.submit-btn {
   background-color: #4ECDC4;
   border: none;
   border-radius: 20px;
@@ -97,14 +98,15 @@ body{
   padding: 13px 15px;
 }
 
-.submit-btn:hover{
+.submit-btn:hover {
   color: #4ECDC4;
   background-color: black;
   cursor: pointer;
-  transition: color 0.35s, background-color 0.35s ;
+  transition: color 0.35s, background-color 0.35s;
 }
 
-.apple-btn, .google-btn{
+.apple-btn,
+.google-btn {
   background-color: transparent;
   border: 1px solid grey;
   border-radius: 100px;
@@ -114,7 +116,8 @@ body{
   color: rgb(43, 43, 43);
 }
 
-.apple-btn:hover, .google-btn:hover{
+.apple-btn:hover,
+.google-btn:hover {
   color: white;
   background-color: grey;
   font-weight: bold;
@@ -122,16 +125,17 @@ body{
   transition: color 0.35s, background-color 0.35s, font-weight 0.35s;
 }
 
-.google-btn{
+.google-btn {
   margin-left: 10px;
 }
 
-.apple-logo, .google-logo{
+.apple-logo,
+.google-logo {
   width: 15px;
   height: 15px;
 }
 
-.adjust{
+.adjust {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -139,37 +143,112 @@ body{
   column-gap: 5px;
 }
 
-.bottom-section{
+.bottom-section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-left: 20px;
   margin-right: 20px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
-.question, .TC{
+.question,
+.TC {
   font-size: 12px;
 }
 
-.span1{
+.span1 {
   color: grey;
 }
 
-.u1, .TC{
+.u1,
+.TC {
   cursor: pointer;
 }
 
-.image-container{
+.image-container {
   margin: auto;
   width: 90%;
   height: 90%;
 }
 
-.sign-up-image{
+.sign-up-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 30px;
+}
+
+
+@media (max-width: 890px) {
+  body {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 100vh;
+  }
+
+  .sign-up-form {
+    flex-direction: column-reverse;
+    width: 90%;
+    height: auto;
+  }
+
+  .left-section,
+  .right-section {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: auto;
+  }
+
+  .right-section {
+    margin-bottom: 0px;
+  }
+
+  .right-section {
+    justify-content: space-around;
+  }
+
+  .moto {
+    display: none;
+  }
+
+  .create-account {
+    width: auto;
+    row-gap: 20px;
+  }
+
+  .text {
+    font-size: 1.5em;
+  }
+
+  .text2 {
+    font-size: 0.7em;
+  }
+
+  .sign-up-details {
+    row-gap: 10px;
+    justify-content: center;
+    width: auto;
+    margin: 10px auto;
+  }
+
+  .bottom-section {
+    margin: 30px;
+  }
+
+  .question,
+  .TC {
+    font-size: 10px;
+  }
+
+  .image-container {
+    margin: auto;
+    width: 90%;
+    height: 90%;
+  }
+
+  .sign-up-image {
+    border-radius: 20px;
+  }
 }
