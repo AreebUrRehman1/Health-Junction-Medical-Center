@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Prescription</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/Css/general.css">
+  <link rel="stylesheet" href="/Css/header.css">
+  <link rel="stylesheet" href="/Css/footer.css">
+  <link rel="stylesheet" href="/Css/Doctor/prescription.css">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-design">
+      <div class="logo">
+        <img src="/Images/logo.png" alt="logo" class="logo-img">
+        <h1>Doctor Portal</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="patient-list.html">Patients</a></li>
+          <li><a href="/index.html" class="cta-button">Log Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="new-prescription-main">
+    <section class="new-prescription-header">
+      <a href="dashboard.html" class="back-link">&larr; Back to Dashboard</a>
+      <h2>Write a New Prescription</h2>
+    </section>
+
+    <section class="prescription-form-container">
+      <form class="prescription-form">
+        <div class="form-group">
+          <label for="patient-name">Patient Name</label>
+          <input type="text" id="patient-name" placeholder="Search or select a patient.">
+        </div>
+        <div class="form-group">
+          <label for="medication-name">Medication Name</label>
+          <input type="text" id="medication-name" placeholder="e.g., Amoxicillin">
+        </div>
+        <div class="form-group">
+          <label for="strength">Strength</label>
+          <input type="text" id="strength" placeholder="e.g., 500 mg">
+        </div>
+        <div class="form-group">
+          <label for="dosage">Dosage</label>
+          <input type="text" id="dosage" placeholder="e.g., 1 tablet">
+        </div>
+        <div class="form-group">
+          <label for="route">Route</label>
+          <select id="route">
+            <option value="">Select Route</option>
+            <option value="oral">Oral</option>
+            <option value="topical">Topical</option>
+            <option value="injectable">Injectable</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="frequency">Frequency</label>
+          <input type="text" id="frequency" placeholder="e.g., Twice a day">
+        </div>
+        <div class="form-group">
+          <label for="duration">Duration</label>
+          <input type="text" id="duration" placeholder="e.g., 10 days">
+        </div>
+        <div class="form-group">
+          <label for="refills">Refills</label>
+          <input type="number" id="refills" placeholder="e.g., 3">
+        </div>
+        <div class="form-group full-width">
+          <label for="instructions">Special Instructions</label>
+          <textarea id="instructions" placeholder="e.g., Take with food."></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="save-prescription-button">Save Prescription</button>
+          <button type="button" class="cancel-button">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="contact-info">
+        <h4>Contact Us</h4>
+        <p>123 Medical Way, Healthville, HJ 12345</p>
+        <p>Email: info@healthjunction.com</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="quick-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Health Junction Medical Center. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctor Portal - Dashboard</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/Css/general.css">
+  <link rel="stylesheet" href="/Css/header.css">
+  <link rel="stylesheet" href="/Css/footer.css">
+  <link rel="stylesheet" href="/Css/Doctor/dashboard.css">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-design">
+      <div class="logo">
+        <img src="/Images/logo.png" alt="logo" class="logo-img">
+        <h1>Doctor Portal</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="patient-list.html">Patients</a></li>
+          <li><a href="/index.html" class="cta-button">Log Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="dashboard-header-section">
+      <div class="dashboard-welcome">
+        <h2>Welcome, Dr. Filr</h2>
+        <p>Your portal for managing patients and daily schedules.</p>
+      </div>
+      <div class="dashboard-stats">
+        <div class="stat-card">
+          <p class="stat-number">12</p>
+          <p class="stat-label">Appointments Today</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-number">7</p>
+          <p class="stat-label">New Patients This Week</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="today-appointments-section">
+      <h3>Today's Appointments</h3>
+      <div class="appointments-list">
+        <div class="appointment-card">
+          <p class="appointment-time">09:00 AM</p>
+          <p class="appointment-patient">John Doe</p>
+          <p class="appointment-reason">Follow-up check-up</p>
+        </div>
+        <div class="appointment-card">
+          <p class="appointment-time">10:30 AM</p>
+          <p class="appointment-patient">Jane Smith</p>
+          <p class="appointment-reason">Annual physical</p>
+        </div>
+        <div class="appointment-card">
+          <p class="appointment-time">11:00 AM</p>
+          <p class="appointment-patient">David Lee</p>
+          <p class="appointment-reason">Lab results review</p>
+        </div>
+        <div class="appointment-card">
+          <p class="appointment-time">02:00 PM</p>
+          <p class="appointment-patient">Emily Chen</p>
+          <p class="appointment-reason">New patient consultation</p>
+        </div>
+      </div>
+      <a href="schedule.html" class="view-all-link">View Full Schedule &rarr;</a>
+    </section>
+
+    <section class="quick-links-section">
+      <h3>Quick Links</h3>
+      <div class="quick-links-container">
+        <a href="patient-list.html" class="quick-link-card">
+          <img src="/Images/icons/patient.png" alt="Patients Icon">
+          <h4>View Patients</h4>
+          <p>Access and manage all patient records.</p>
+        </a>
+        <a href="prescription.html" class="quick-link-card">
+          <img src="/Images/icons/prescription.png" alt="Prescription Icon">
+          <h4>Write a Prescription</h4>
+          <p>Create new prescriptions for patients.</p>
+        </a>
+        <a href="patient-list.html" class="quick-link-card">
+          <img src="/Images/icons/Note.png" alt="Note Icon">
+          <h4>Add a Note</h4>
+          <p>Add clinical notes to a patient's chart.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="contact-info">
+        <h4>Contact Us</h4>
+        <p>123 Medical Way, Healthville, HJ 12345</p>
+        <p>Email: info@healthjunction.com</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="quick-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Health Junction Medical Center. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Clinical Note</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/Css/general.css">
+  <link rel="stylesheet" href="/Css/header.css">
+  <link rel="stylesheet" href="/Css/footer.css">
+  <link rel="stylesheet" href="/Css/Doctor/clinical-note.css">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-design">
+      <div class="logo">
+        <img src="/Images/logo.png" alt="logo" class="logo-img">
+        <h1>Doctor Portal</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="patient-list.html">Patients</a></li>
+          <li><a href="/index.html" class="cta-button">Log Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="clinical-note-main">
+    <section class="clinical-note-header">
+      <a href="patient-record.html" class="back-link">&larr; Back to Patient Record</a>
+      <h2>Add New Clinical Note</h2>
+      <div class="note-info-summary">
+        <h3>Patient: John Doe</h3>
+        <p>Patient ID: PT8847</p>
+      </div>
+    </section>
+
+    <section class="clinical-note-form-container">
+      <form class="clinical-note-form">
+        <!-- SOAP: Subjective -->
+        <div class="form-group">
+          <label for="subjective">Subjective (S)</label>
+          <textarea id="subjective"
+            placeholder="Document the patient's chief complaint, symptoms, and relevant history."></textarea>
+        </div>
+
+        <!-- SOAP: Objective -->
+        <div class="form-group">
+          <label for="objective">Objective (O)</label>
+          <textarea id="objective"
+            placeholder="Record objective information, such as vital signs, physical exam findings, and lab results."></textarea>
+        </div>
+
+        <!-- SOAP: Assessment -->
+        <div class="form-group">
+          <label for="assessment">Assessment (A)</label>
+          <textarea id="assessment"
+            placeholder="Provide a diagnosis or clinical impression based on the subjective and objective data."></textarea>
+        </div>
+
+        <!-- SOAP: Plan -->
+        <div class="form-group">
+          <label for="plan">Plan (P)</label>
+          <textarea id="plan"
+            placeholder="Outline the treatment plan, including prescriptions, follow-up appointments, and patient education."></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="save-note-button">Save Clinical Note</button>
+          <button type="button" class="cancel-button">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="contact-info">
+        <h4>Contact Us</h4>
+        <p>123 Medical Way, Healthville, HJ 12345</p>
+        <p>Email: info@healthjunction.com</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="quick-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Health Junction Medical Center. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>
