@@ -1,0 +1,170 @@
+.cta-button2:hover {
+  background-color: white;
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: linear-gradient(to bottom right, #eaf2ff, #c3d9ff);
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #404040;
+}
+
+.hero-content h2 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+/* Services Section */
+.services-section {
+  display: flex;
+  justify-content: space-around;
+  column-gap: 20px;
+  padding: 50px 20px;
+  background-color: #f2f5f9;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+  width: 30%;
+}
+
+.service-card h3 {
+  color: #4ECDC4;
+}
+
+/* Practitioner Section */
+.practitioner-section {
+  background-color: #eaf2ff;
+  padding: 50px 20px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.practitioner-content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.practitioner-content h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.practitioner-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.practitioner-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #4ECDC4;
+}
+
+.practitioner-details {
+  text-align: left;
+  max-width: 600px;
+}
+
+.practitioner-details h3 {
+  margin-top: 0;
+  color: #4ECDC4;
+}
+
+/* About Section */
+.about-section {
+  margin-top: 50px;
+  padding: 50px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #404040;
+}
+
+
+@media (max-width: 840px) {
+  .hero-section {
+    height: 50vh;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .hero-section {
+    height: 60vh;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 0px;
+  }
+
+  .hero-content p {
+    font-size: 0.9em;
+    margin-bottom: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .services-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+  }
+
+  .service-card {
+    width: auto;
+  }
+
+  .service-card h3 {
+    color: #4ECDC4;
+  }
+
+  .practitioner-content h2 {
+    font-size: 1.8em;
+  }
+
+  .practitioner-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .about-content h2 {
+    font-size: 1.8em;
+  }
+
+  .about-content p {
+    font-size: 0.9em;
+  }
+}
