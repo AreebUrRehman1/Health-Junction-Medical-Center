@@ -10,7 +10,7 @@ export function SignInPage() {
     <>
       <title>Sign In</title>
       <div className="body">
-        <div className="sign-up-form">
+        <div className="sign-up-form sign-up-form2">
 
           <div className="left-section">
 

@@ -1,3 +1,12 @@
-.sign-up-form {
+.sign-up-form2 {
   flex-direction: row-reverse;
+}
+
+@media (max-width: 890px) {
+  .sign-up-form {
+    flex-direction: column-reverse;
+    width: 90%;
+    height: auto;
+  }
+
 }

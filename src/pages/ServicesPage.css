@@ -138,7 +138,7 @@
   }
 
   .service-card {
-    width: 100%;
+    width: auto;
   }
 
   .cta-buttons {
