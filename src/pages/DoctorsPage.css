@@ -1,0 +1,77 @@
+.doctors-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f2f5f9;
+  text-align: center;
+  padding: 50px 20px;
+  height: 35vh;
+}
+
+.doctors-hero h2 {
+  font-size: 2.5em;
+  color: #404040;
+  margin-bottom: 10px;
+}
+
+.doctors-hero p {
+  font-size: 1.1em;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 50px 20px;
+  background-color: #eaf2ff;
+}
+
+.doctor-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.doctor-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.doctor-card h3 {
+  font-size: 1.5em;
+  color: #404040;
+  margin-bottom: 5px;
+}
+
+.doctor-card p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 480px) {
+  .doctors-hero {
+    height: 40vh;
+  }
+
+  .doctors-hero h2 {
+    font-size: 1.8em;
+  }
+
+  .doctors-hero p {
+    font-size: 0.9em;
+  }
+}

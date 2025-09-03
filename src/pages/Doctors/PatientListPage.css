@@ -1,0 +1,139 @@
+.patient-list-main {
+  padding: 80px 50px;
+  background-color: #f2f5f9;
+  color: #404040;
+}
+
+.patient-list-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.patient-list-header h2 {
+  font-size: 2.5em;
+  color: #4ECDC4;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+
+#patient-search {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 1em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+}
+
+#patient-search:focus {
+  outline: none;
+  border-color: #4ECDC4;
+}
+
+.patient-list-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin-top: 30px;
+}
+
+.patient-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-table th,
+.patient-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.patient-table th {
+  background-color: #4ECDC4;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.patient-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.action-button {
+  background-color: #404040;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #38a59f;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .patient-table {
+    border: 0;
+  }
+
+  .patient-table thead {
+    display: none;
+  }
+
+  .patient-table,
+  .patient-table tbody,
+  .patient-table tr,
+  .patient-table td {
+    display: block;
+    max-width: 100%;
+  }
+
+  .patient-table tr {
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .patient-table td {
+    text-align: right;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    position: relative;
+  }
+
+  .patient-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 50%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    color: #4ECDC4;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-list-main {
+    padding: 80px 20px;
+  }
+
+  .patient-list-header h2 {
+    font-size: 2em;
+  }
+
+}
