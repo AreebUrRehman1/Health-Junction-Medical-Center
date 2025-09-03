@@ -2,8 +2,8 @@ import { Link } from 'react-router'
 import SignUp from '../assets/photo/sign-up.png'
 import GoogleLogo from '../assets/google-logo.png'
 import AppleLogo from '../assets/apple-logo.png'
-import './SignUpPage.css'
 import './SignInPage.css'
+import './SignUpPage.css'
 
 export function SignInPage() {
   return (
