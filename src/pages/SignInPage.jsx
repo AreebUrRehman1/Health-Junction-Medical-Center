@@ -1,14 +1,47 @@
-import { Link } from 'react-router'
+import { useEffect } from 'react'
+import { Link, useNavigate } from 'react-router'
 import SignUp from '../assets/photo/sign-up.png'
 import GoogleLogo from '../assets/google-logo.png'
 import AppleLogo from '../assets/apple-logo.png'
 import './SignInPage.css'
 import './SignUpPage.css'
 
-export function SignInPage() {
+export function SignInPage({rememberMeCount, setRememberMeCount}) {
+  let navigate = useNavigate();
+
+
+  useEffect(() => {
+
+    if (rememberMeCount === 1) {
+      navigate('/doctor-dashboard')
+    }
+    localStorage.setItem("rememberMe", `${rememberMeCount}`);
+
+  }, [rememberMeCount, navigate])
+
+
+  let emailValue = "";
+  let passwordValue = "";
+
+  function getEmail(event) {
+    emailValue = event.target.value;
+  }
+
+  function getPassword(event) {
+    passwordValue = event.target.value;
+  }
+
+  function login() {
+    if (emailValue === "doctor@hjmc.com" && passwordValue === "doctor") {
+      navigate('/doctor-dashboard')
+      setRememberMeCount(1)
+    }
+  }
+
   return (
     <>
       <title>Sign In</title>
+
       <div className="body">
         <div className="sign-up-form sign-up-form2">
 
@@ -25,13 +58,13 @@ export function SignInPage() {
 
               <div className="sign-up-details">
                 <div className="detail">Email</div>
-                <div><input type="email" className="input-text" placeholder="Enter your email" /></div>
+                <div><input type="email" className="input-text" placeholder="Enter your email" onChange={getEmail} /></div>
                 <div className="detail">Password</div>
-                <div><input type="password" className="input-text" placeholder="Enter a password" /></div>
+                <div><input type="password" className="input-text" placeholder="Enter a password" onChange={getPassword} /></div>
               </div>
 
               <div className="sign-up-btn">
-                <div><button className="submit-btn">Submit</button></div>
+                <div><button className="submit-btn" onClick={login}>Submit</button></div>
                 <div className="social-buttons">
                   <button className="apple-btn">
                     <div className="adjust"><img src={AppleLogo} alt="Apple logo" className="apple-logo" />Apple</div>

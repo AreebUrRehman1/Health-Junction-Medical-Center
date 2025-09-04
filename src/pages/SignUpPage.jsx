@@ -1,10 +1,23 @@
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router'
 import { Link } from 'react-router'
 import SignUp from '../assets/photo/sign-up.png'
 import GoogleLogo from '../assets/google-logo.png'
 import AppleLogo from '../assets/apple-logo.png'
 import './SignUpPage.css'
 
-export function SignUpPage() {
+export function SignUpPage({rememberMeCount}) {
+  let navigate = useNavigate();
+
+  useEffect(() => {
+
+    if (rememberMeCount === 1) {
+      navigate('/doctor-dashboard')
+    }
+    localStorage.setItem("rememberMe", `${rememberMeCount}`);
+
+  }, [rememberMeCount, navigate])
+
   return (
     <>
       <title>Sign Up</title>

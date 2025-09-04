@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Route, Routes } from 'react-router';
 import { HomePage } from './pages/HomePage';
 import { SignUpPage } from './pages/SignUpPage';
@@ -18,11 +19,13 @@ import { SchedulePage } from './pages/Doctors/SchedulePage';
 import './App.css';
 
 function App() {
+    const [rememberMeCount, setRememberMeCount] = useState(Number(localStorage.getItem('rememberMe')) || 0)
+
   return (
     <Routes>
       <Route index element={<HomePage />} />
-      <Route path="sign-up" element={<SignUpPage />} />
-      <Route path="sign-in" element={<SignInPage />} />
+      <Route path="sign-up" element={<SignUpPage rememberMeCount={rememberMeCount} setRememberMeCount={setRememberMeCount} />} />
+      <Route path="sign-in" element={<SignInPage rememberMeCount={rememberMeCount} setRememberMeCount={setRememberMeCount} />} />
       <Route path="services" element={<ServicesPage />} />
       <Route path="contact" element={<ContactPage />} />
       <Route path="terms-of-service" element={<TermsOfServicePage />} />
