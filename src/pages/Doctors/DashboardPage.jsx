@@ -6,12 +6,12 @@ import Prescription from '../../assets/Icons/prescription.png'
 import Patient from '../../assets/Icons/patient.png'
 import './DashboardPage.css'
 
-export function DashboardPage() {
+export function DashboardPage({setRememberMeCount}) {
   return (
     <>
       <title>Doctor Portal - Dashboard</title>
 
-      <DoctorHeader />
+      <DoctorHeader setRememberMeCount={setRememberMeCount}/>
 
       <main className="dashboard-main">
         <section className="dashboard-header-section">

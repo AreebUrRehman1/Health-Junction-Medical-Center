@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Appointment</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="../../Css/general.css">
+  <link rel="stylesheet" href="../../Css/header.css">
+  <link rel="stylesheet" href="../../Css/footer.css">
+  <link rel="stylesheet" href="../../Css/Doctor/add-appointment.css">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-design">
+      <div class="logo">
+        <img src="/Images/logo.png" alt="logo" class="logo-img">
+        <h1>Doctor Portal</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="patient-list.html">Patients</a></li>
+          <li><a href="/index.html" class="cta-button">Log Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="add-appointment-main">
+    <section class="add-appointment-header">
+      <a href="schedule.html" class="back-link">&larr; Back to Schedule</a>
+      <h2>Add a New Appointment</h2>
+    </section>
+
+    <section class="appointment-form-container">
+      <form class="appointment-form">
+        <div class="form-group">
+          <label for="patient-name">Patient Name</label>
+          <input type="text" id="patient-name" placeholder="Search or select a patient.">
+        </div>
+        <div class="form-group">
+          <label for="appointment-date">Date</label>
+          <input type="date" id="appointment-date" required>
+        </div>
+        <div class="form-group">
+          <label for="appointment-time">Time</label>
+          <input type="time" id="appointment-time" required>
+        </div>
+        <div class="form-group full-width">
+          <label for="reason-for-visit">Reason for Visit</label>
+          <textarea id="reason-for-visit" placeholder="e.g., Annual physical, follow-up, new symptoms."></textarea>
+        </div>
+        
+        <div class="form-buttons">
+          <button type="submit" class="save-appointment-button">Save Appointment</button>
+          <button type="button" class="cancel-button">Cancel</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="contact-info">
+        <h4>Contact Us</h4>
+        <p>123 Medical Way, Healthville, HJ 12345</p>
+        <p>Email: info@healthjunction.com</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="quick-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Health Junction Medical Center. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+.add-appointment-main {
+  padding: 80px 50px;
+  background-color: #f2f5f9;
+  color: #404040;
+}
+
+.add-appointment-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.add-appointment-header h2 {
+  font-size: 2.5em;
+  color: #4ECDC4;
+  margin-bottom: 10px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #404040;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #4ECDC4;
+}
+
+.appointment-form-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.appointment-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #404040;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4ECDC4;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-buttons {
+  grid-column: span 2;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.save-appointment-button,
+.cancel-button {
+  border: none;
+  padding: 12px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.save-appointment-button {
+  background-color: #4ECDC4;
+  color: white;
+}
+
+.save-appointment-button:hover {
+  background-color: #38a59f;
+}
+
+.cancel-button {
+  background-color: #e0e0e0;
+  color: #404040;
+}
+
+.cancel-button:hover {
+  background-color: #c0c0c0;
+}
+
+@media (max-width: 768px) {
+  .appointment-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+}

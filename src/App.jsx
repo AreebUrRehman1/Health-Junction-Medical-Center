@@ -24,7 +24,7 @@ function App() {
   return (
     <Routes>
       <Route index element={<HomePage />} />
-      <Route path="sign-up" element={<SignUpPage rememberMeCount={rememberMeCount} setRememberMeCount={setRememberMeCount} />} />
+      <Route path="sign-up" element={<SignUpPage rememberMeCount={rememberMeCount} />} />
       <Route path="sign-in" element={<SignInPage rememberMeCount={rememberMeCount} setRememberMeCount={setRememberMeCount} />} />
       <Route path="services" element={<ServicesPage />} />
       <Route path="contact" element={<ContactPage />} />
@@ -32,7 +32,7 @@ function App() {
       <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="doctors" element={<DoctorsPage />} />
       <Route path="careers" element={<CareersPage />} />
-      <Route path="doctor-dashboard" element={<DashboardPage />} />
+      <Route path="doctor-dashboard" element={<DashboardPage setRememberMeCount={setRememberMeCount}/>} />
       <Route path="clinical-note" element={<ClinicalNotePage />} />
       <Route path="edit-patient-details" element={<EditPatientDetailsPage />} />
       <Route path="patient-list" element={<PatientListPage />} />

@@ -36,6 +36,15 @@ export function SignInPage({rememberMeCount, setRememberMeCount}) {
       navigate('/doctor-dashboard')
       setRememberMeCount(1)
     }
+    else{
+    alert('The Email or Password is incorrect. Please Try Again!')
+    }
+  }
+
+  function keyboard(event){
+    if(event.key === 'Enter'){
+      login();
+    }
   }
 
   return (
@@ -58,9 +67,9 @@ export function SignInPage({rememberMeCount, setRememberMeCount}) {
 
               <div className="sign-up-details">
                 <div className="detail">Email</div>
-                <div><input type="email" className="input-text" placeholder="Enter your email" onChange={getEmail} /></div>
+                <div><input type="email" className="input-text" placeholder="Enter your email" onChange={getEmail} onKeyDown={keyboard}/></div>
                 <div className="detail">Password</div>
-                <div><input type="password" className="input-text" placeholder="Enter a password" onChange={getPassword} /></div>
+                <div><input type="password" className="input-text" placeholder="Enter a password" onChange={getPassword} onKeyDown={keyboard}/></div>
               </div>
 
               <div className="sign-up-btn">
