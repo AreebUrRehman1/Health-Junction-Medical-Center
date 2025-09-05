@@ -84,6 +84,7 @@
 }
 
 .appointment-card {
+  position: relative;
   background-color: #f9f9f9;
   border-radius: 8px;
   padding: 15px;
@@ -201,6 +202,36 @@
 .modal-form-actions button.save {
   background-color: #4ECDC4;
   color: white;
+}
+
+.remove-appointment-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: transparent;
+  color: #999;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  line-height: 1;
+  /* Ensures the 'x' is vertically centered */
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.remove-appointment-button:hover {
+  color: #fff;
+  background-color: #ef4444;
+  /* A shade of red */
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Media Queries for responsiveness */

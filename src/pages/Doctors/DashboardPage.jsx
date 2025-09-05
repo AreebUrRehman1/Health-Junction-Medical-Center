@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import dayjs from 'dayjs'
 import { DoctorHeader } from '../../components/DoctorHeader'
 import { Footer } from '../../components/Footer'
 import Note from '../../assets/Icons/note.png'
@@ -6,12 +7,16 @@ import Prescription from '../../assets/Icons/prescription.png'
 import Patient from '../../assets/Icons/patient.png'
 import './DashboardPage.css'
 
-export function DashboardPage({setRememberMeCount}) {
+export function DashboardPage({ setRememberMeCount, totalAppointments, appointments, totalWeeklyAppointments }) {
+
+  const today = dayjs().format('YYYY-MM-DD');
+  const todaysAppointments = appointments[today] || [];
+
   return (
     <>
       <title>Doctor Portal - Dashboard</title>
 
-      <DoctorHeader setRememberMeCount={setRememberMeCount}/>
+      <DoctorHeader setRememberMeCount={setRememberMeCount} />
 
       <main className="dashboard-main">
         <section className="dashboard-header-section">
@@ -21,12 +26,12 @@ export function DashboardPage({setRememberMeCount}) {
           </div>
           <div className="dashboard-stats">
             <div className="stat-card">
-              <p className="stat-number">12</p>
+              <p className="stat-number">{totalAppointments}</p>
               <p className="stat-label">Appointments Today</p>
             </div>
             <div className="stat-card">
-              <p className="stat-number">7</p>
-              <p className="stat-label">New Patients This Week</p>
+              <p className="stat-number">{totalWeeklyAppointments}</p>
+              <p className="stat-label">Total Appointments This Week</p>
             </div>
           </div>
         </section>
@@ -34,26 +39,17 @@ export function DashboardPage({setRememberMeCount}) {
         <section className="today-appointments-section">
           <h3>Today's Appointments</h3>
           <div className="appointments-list">
-            <div className="appointment-card">
-              <p className="appointment-time">09:00 AM</p>
-              <p className="appointment-patient">John Doe</p>
-              <p className="appointment-reason">Follow-up check-up</p>
-            </div>
-            <div className="appointment-card">
-              <p className="appointment-time">10:30 AM</p>
-              <p className="appointment-patient">Jane Smith</p>
-              <p className="appointment-reason">Annual physical</p>
-            </div>
-            <div className="appointment-card">
-              <p className="appointment-time">11:00 AM</p>
-              <p className="appointment-patient">David Lee</p>
-              <p className="appointment-reason">Lab results review</p>
-            </div>
-            <div className="appointment-card">
-              <p className="appointment-time">02:00 PM</p>
-              <p className="appointment-patient">Emily Chen</p>
-              <p className="appointment-reason">New patient consultation</p>
-            </div>
+            {todaysAppointments.length > 0 ? (
+              todaysAppointments.map((appointment, index) => (
+                <div key={index} className="appointment-card">
+                  <p className="appointment-time">{appointment.time}</p>
+                  <p className="appointment-patient">{appointment.patient}</p>
+                  <p className="appointment-reason">{appointment.reason}</p>
+                </div>
+              ))
+            ) : (
+              <p className="no-appointments">No appointments for today.</p>
+            )}
           </div>
           <Link to="/doctor-schedule" className="view-all-link">View Full Schedule &rarr;</Link>
         </section>

@@ -7,27 +7,7 @@ import './SchedulePage.css'
 
 dayjs.extend(weekday);
 
-export function SchedulePage() {
-
-  const [appointments, setAppointments] = useState({
-    [dayjs().weekday(1).format('YYYY-MM-DD')]: [
-      { time: '09:00 AM', patient: 'John Doe', reason: 'Follow-up check-up' },
-      { time: '10:30 AM', patient: 'Jane Smith', reason: 'Annual physical' },
-      { time: '09:00 AM', patient: 'John Doe', reason: 'Follow-up check-up' },
-      { time: '11:00 AM', patient: 'David Lee', reason: 'Lab results review' },
-    ],
-    [dayjs().weekday(2).format('YYYY-MM-DD')]: [
-      { time: '09:30 AM', patient: 'Emily Chen', reason: 'New patient consultation' },
-      { time: '11:00 AM', patient: 'Michael Brown', reason: 'Chronic pain management' },
-    ],
-    [dayjs().weekday(4).format('YYYY-MM-DD')]: [
-      { time: '09:00 AM', patient: 'Susan Jones', reason: 'Fever and symptoms' },
-      { time: '10:00 AM', patient: 'Robert Wilson', reason: 'Allergy consultation' },
-    ],
-    [dayjs().weekday(5).format('YYYY-MM-DD')]: [
-      { time: '02:00 PM', patient: 'Lisa Taylor', reason: 'Post-op follow-up' },
-    ],
-  });
+export function SchedulePage({ appointments, setAppointments }) {
 
   const [currentDate, setCurrentDate] = useState(dayjs().weekday(1));
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,11 +22,11 @@ export function SchedulePage() {
   const handleAddAppointment = (e) => {
     e.preventDefault(); // Prevents the form from submitting and refreshing the page
 
-    // We get the date from the form and format it correctly
+    // We get the date from the form and format it correctly (Check System)
     const appointmentDate = dayjs(newAppointment.date).format('YYYY-MM-DD');
 
-    // Create a new copy of the appointments object to update the state immutably.
-    // This is crucial in React to trigger a re-render.
+    // You cannot directly modify the state object (appointments)
+    // You must always create a new copy of the object, make your changes to the copy, and then tell React to use the new copy.
     const updatedAppointments = { ...appointments };
 
     // Initialize an array for the new date if it doesn't exist yet
@@ -54,7 +34,7 @@ export function SchedulePage() {
       updatedAppointments[appointmentDate] = [];
     }
 
-    // Add the new appointment to the correct day's array
+    // Add the appointment to the correct day's array
     updatedAppointments[appointmentDate].push({
       time: newAppointment.time,
       patient: newAppointment.patient,
@@ -68,11 +48,25 @@ export function SchedulePage() {
     setIsModalOpen(false);
   };
 
-  
+
   // Handles form input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewAppointment(prevState => ({ ...prevState, [name]: value }));
+  };
+
+  const handleRemoveAppointment = (date, indexToRemove) => {
+    const updatedAppointments = { ...appointments };
+    // Remove the appointment from the array
+    updatedAppointments[date].splice(indexToRemove, 1);
+
+    // If the day is now empty, remove the day key from the object to prevent it from showing up in the schedule
+    if (updatedAppointments[date].length === 0) {
+      delete updatedAppointments[date];
+    }
+    
+    // Update the state with the modified appointments object
+    setAppointments(updatedAppointments);
   };
 
   const goToNextWeek = () => {
@@ -97,7 +91,7 @@ export function SchedulePage() {
     <>
       <title>Doctor Portal - Schedule</title>
 
-      <DoctorHeader />
+      <DoctorHeader/>
 
       <main className="schedule-main">
         <section className="schedule-header">
@@ -127,6 +121,12 @@ export function SchedulePage() {
                         <p className="appointment-time">{appointment.time}</p>
                         <p className="appointment-patient">{appointment.patient}</p>
                         <p className="appointment-reason">{appointment.reason}</p>
+                        <button
+                          className="remove-appointment-button"
+                          onClick={() => handleRemoveAppointment(dayData.date.format('YYYY-MM-DD'), index)}
+                        >
+                          &times;
+                        </button>
                       </div>
                     ))
                   ) : (
