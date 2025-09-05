@@ -151,6 +151,59 @@
   background-color: #38a59f;
 }
 
+
+.modal-button button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-button button.cancel-button {
+  background-color: #ccc;
+  color: #404040;
+}
+
+.modal-button button.save-button{
+  background-color: #4ECDC4;
+  color: white;
+}
+
+/* Styles for the "Add Another" button */
+.add-med-button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.add-med-button:hover {
+  background-color: #218838;
+}
+
+/* Styles for the "Remove" button */
+.remove-med-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 12px;
+}
+
+.remove-med-button:hover {
+  background-color: #c82333;
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
   .patient-details-container {

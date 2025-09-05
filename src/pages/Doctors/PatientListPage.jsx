@@ -35,6 +35,7 @@ export function PatientListPage() {
     }
   ]
 
+
   return (
     <>
       <title>Doctor Portal - Patient List</title>
@@ -62,7 +63,7 @@ export function PatientListPage() {
             </thead>
             <tbody>
               {patientDetails.map((patient) => {
-                  return(
+                return (
                   <tr key={patient.Id}>
                     <td data-label="Patient Name">
                       {patient.name}
@@ -74,7 +75,7 @@ export function PatientListPage() {
                       <Link to={`/patient-record/${patient.Id}`}><button className="action-button view-button">View Details</button></Link>
                     </td>
                   </tr>
-                  )
+                )
               })}
             </tbody>
           </table>

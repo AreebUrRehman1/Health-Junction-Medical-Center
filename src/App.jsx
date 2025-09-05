@@ -16,6 +16,7 @@ import { PatientListPage } from './pages/Doctors/PatientListPage';
 import { PatientRecordPage } from './pages/Doctors/PatientRecordPage';
 import { PrescriptionPage } from './pages/Doctors/PrescriptionPage';
 import { SchedulePage } from './pages/Doctors/SchedulePage';
+import { patientDetails as defaultPatientDetails } from './utils/patient-data';
 import './App.css';
 
 dayjs.extend(weekday);
@@ -51,10 +52,16 @@ function App() {
     return savedAppointments ? JSON.parse(savedAppointments) : defaultAppointments;
   });
 
+  // Initialize patientDetails state from localStorage or use default data
+  const [patientDetails, setPatientDetails] = useState(() => {
+    const savedPatients = localStorage.getItem('patientDetails');
+    return savedPatients ? JSON.parse(savedPatients) : defaultPatientDetails;
+  });
+
   // Calculate the total number of appointments
   const totalAppointments = appointments[dayjs().format('YYYY-MM-DD')]?.length || 0;
 
-    // Calculate the total number of appointments for the current week
+  // Calculate the total number of appointments for the current week
   const totalWeeklyAppointments = Object.values(appointments).reduce((total, dailyAppointments) => {
     return total + dailyAppointments.length;
   }, 0);
@@ -63,6 +70,43 @@ function App() {
   useEffect(() => {
     localStorage.setItem('appointments', JSON.stringify(appointments));
   }, [appointments]);
+
+  // Use useEffect to save patientDetails to localStorage whenever they change
+  useEffect(() => {
+    localStorage.setItem('patientDetails', JSON.stringify(patientDetails));
+  }, [patientDetails]);
+
+  // Function to update a patient's medical history
+  const updatePatientMedicalHistory = (patientId, updatedData) => {
+    setPatientDetails(prevDetails =>
+      prevDetails.map(patient =>
+        patient.Id === patientId ? { ...patient, ...updatedData } : patient
+      )
+    );
+  };
+
+  // Function to update a patient's medications
+  const updatePatientMedications = (patientId, updatedMedications) => {
+    setPatientDetails(prevDetails =>
+      prevDetails.map(patient =>
+        patient.Id === patientId ? { ...patient, medications: updatedMedications } : patient
+      )
+    );
+  };
+
+  // Function to add a new diagnosis to a patient's record
+  const addPatientDiagnosis = (patientId, newDiagnosis) => {
+    setPatientDetails(prevDetails =>
+      prevDetails.map(patient => {
+        if (patient.Id === patientId) {
+          // Create a new array with the new diagnosis added
+          const updatedRecentVisits = [...patient.recentVisits, newDiagnosis];
+          return { ...patient, recentVisits: updatedRecentVisits };
+        }
+        return patient;
+      })
+    );
+  };
 
   return (
     <Routes>
@@ -75,9 +119,9 @@ function App() {
       <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="doctors" element={<DoctorsPage />} />
       <Route path="careers" element={<CareersPage />} />
-      <Route path="doctor-dashboard" element={<DashboardPage setRememberMeCount={setRememberMeCount} totalAppointments={totalAppointments} appointments={appointments} totalWeeklyAppointments={totalWeeklyAppointments}/>} />
+      <Route path="doctor-dashboard" element={<DashboardPage setRememberMeCount={setRememberMeCount} totalAppointments={totalAppointments} appointments={appointments} totalWeeklyAppointments={totalWeeklyAppointments} />} />
       <Route path="patient-list" element={<PatientListPage />} />
-      <Route path="patient-record/:patientId" element={<PatientRecordPage />} />
+      <Route path="patient-record/:patientId" element={<PatientRecordPage patientDetails={patientDetails} updatePatientMedicalHistory={updatePatientMedicalHistory} addPatientDiagnosis={addPatientDiagnosis} updatePatientMedications={updatePatientMedications} />} />
       <Route path="prescription" element={<PrescriptionPage />} />
       <Route path="doctor-schedule" element={<SchedulePage appointments={appointments} setAppointments={setAppointments} />} />
     </Routes>
