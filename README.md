@@ -1,4 +1,4 @@
-##Hospital Management System
+<h1 align="center">Hospital Management System</h1>
 
 A comprehensive, hospital management system designed to serve both medical staff and patients. This project is being developed as a single-page application (SPA) with React (JavaScript) for the front-end, focusing on modularity, security, and a seamless user experience.
 
