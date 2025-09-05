@@ -67,11 +67,6 @@ export function DashboardPage({ setRememberMeCount, totalAppointments, appointme
               <h4>Write a Prescription</h4>
               <p>Create new prescriptions for patients.</p>
             </Link>
-            <Link to="/patient-list" className="quick-link-card">
-              <img src={Note} alt="Note Icon" />
-              <h4>Add a Note</h4>
-              <p>Add clinical notes to a patient's chart.</p>
-            </Link>
           </div>
         </section>
       </main>
