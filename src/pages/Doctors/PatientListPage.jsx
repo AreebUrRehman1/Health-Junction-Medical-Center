@@ -5,6 +5,36 @@ import './PatientListPage.css'
 
 
 export function PatientListPage() {
+
+  const patientDetails = [
+    {
+      name: 'John Doe',
+      Id: 'PT8847',
+      dateOfBirth: '01/15/1990',
+      contact: 'john.doe@email.com',
+    }, {
+      name: 'Jane Smith',
+      Id: 'PT9235',
+      dateOfBirth: '05/20/1985',
+      contact: 'jane.smith@email.com',
+    }, {
+      name: 'David Lee',
+      Id: 'PT7654',
+      dateOfBirth: '11/03/1972',
+      contact: 'david.lee@email.com',
+    }, {
+      name: 'Emily Chen',
+      Id: 'PT1450',
+      dateOfBirth: '08/22/2001',
+      contact: 'emily.chen@email.com',
+    }, {
+      name: 'Michael Brown',
+      Id: 'PT3289',
+      dateOfBirth: '04/10/1960',
+      contact: 'michael.brown@email.com',
+    }
+  ]
+
   return (
     <>
       <title>Doctor Portal - Patient List</title>
@@ -31,61 +61,21 @@ export function PatientListPage() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td data-label="Patient Name">
-                  John Doe
-                </td>
-                <td data-label="Patient ID">PT8847</td>
-                <td data-label="Date of Birth">01/15/1990</td>
-                <td data-label="Contact">john.doe@email.com</td>
-                <td data-label="Actions">
-                  <Link to="/patient-record"><button className="action-button view-button">View Details</button></Link>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Patient Name">
-                  Jane Smith
-                </td>
-                <td data-label="Patient ID">PT9235</td>
-                <td data-label="Date of Birth">05/20/1985</td>
-                <td data-label="Contact">jane.smith@email.com</td>
-                <td data-label="Actions">
-                  <Link to="/patient-record"><button className="action-button view-button">View Details</button></Link>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Patient Name">
-                  David Lee
-                </td>
-                <td data-label="Patient ID">PT7654</td>
-                <td data-label="Date of Birth">11/03/1972</td>
-                <td data-label="Contact">david.lee@email.com</td>
-                <td data-label="Actions">
-                  <Link to="/patient-record"><button className="action-button view-button">View Details</button></Link>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Patient Name">
-                  Emily Chen
-                </td>
-                <td data-label="Patient ID">PT1450</td>
-                <td data-label="Date of Birth">08/22/2001</td>
-                <td data-label="Contact">emily.chen@email.com</td>
-                <td data-label="Actions">
-                  <Link to="/patient-record"><button className="action-button view-button">View Details</button></Link>
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Patient Name">
-                  Michael Brown
-                </td>
-                <td data-label="Patient ID">PT3289</td>
-                <td data-label="Date of Birth">04/10/1960</td>
-                <td data-label="Contact">michael.brown@email.com</td>
-                <td data-label="Actions">
-                  <Link to="/patient-record"><button className="action-button view-button">View Details</button></Link>
-                </td>
-              </tr>
+              {patientDetails.map((patient) => {
+                  return(
+                  <tr key={patient.Id}>
+                    <td data-label="Patient Name">
+                      {patient.name}
+                    </td>
+                    <td data-label="Patient ID">{patient.Id}</td>
+                    <td data-label="Date of Birth">{patient.dateOfBirth}</td>
+                    <td data-label="Contact">{patient.contact}</td>
+                    <td data-label="Actions">
+                      <Link to={`/patient-record/${patient.Id}`}><button className="action-button view-button">View Details</button></Link>
+                    </td>
+                  </tr>
+                  )
+              })}
             </tbody>
           </table>
         </section>

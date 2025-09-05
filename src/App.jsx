@@ -12,8 +12,6 @@ import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { DoctorsPage } from './pages/DoctorsPage';
 import { CareersPage } from './pages/CareersPage';
 import { DashboardPage } from './pages/Doctors/DashboardPage';
-import { ClinicalNotePage } from './pages/Doctors/ClinicalNotePage';
-import { EditPatientDetailsPage } from './pages/Doctors/EditPatientDetailsPage';
 import { PatientListPage } from './pages/Doctors/PatientListPage';
 import { PatientRecordPage } from './pages/Doctors/PatientRecordPage';
 import { PrescriptionPage } from './pages/Doctors/PrescriptionPage';
@@ -78,10 +76,8 @@ function App() {
       <Route path="doctors" element={<DoctorsPage />} />
       <Route path="careers" element={<CareersPage />} />
       <Route path="doctor-dashboard" element={<DashboardPage setRememberMeCount={setRememberMeCount} totalAppointments={totalAppointments} appointments={appointments} totalWeeklyAppointments={totalWeeklyAppointments}/>} />
-      <Route path="clinical-note" element={<ClinicalNotePage />} />
-      <Route path="edit-patient-details" element={<EditPatientDetailsPage />} />
       <Route path="patient-list" element={<PatientListPage />} />
-      <Route path="patient-record" element={<PatientRecordPage />} />
+      <Route path="patient-record/:patientId" element={<PatientRecordPage />} />
       <Route path="prescription" element={<PrescriptionPage />} />
       <Route path="doctor-schedule" element={<SchedulePage appointments={appointments} setAppointments={setAppointments} />} />
     </Routes>
