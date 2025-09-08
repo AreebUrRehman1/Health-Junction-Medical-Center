@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Portal - Appointments</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/Css/general.css">
+  <link rel="stylesheet" href="/Css/header.css">
+  <link rel="stylesheet" href="/Css/footer.css">
+  <link rel="stylesheet" href="/Css/Patient/book-appointment.css">
+
+  <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="header-design">
+      <div class="logo">
+        <img src="/Images/logo.png" alt="logo" class="logo-img">
+        <h1>Patient Portal</h1>
+      </div>
+      <nav class="navbar">
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="book-appointment.html">Appointments</a></li>
+          <li><a href="medical-records.html">Records</a></li>
+          <li><a href="/index.html" class="cta-button">Log Out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="appointment-main">
+    <section class="appointments-list-section">
+      <h2>Your Appointments</h2>
+      <div class="appointment-card-container">
+        <!-- Upcoming Appointment -->
+        <div class="appointment-card upcoming">
+          <div class="appointment-header">
+            <h4>Upcoming Appointment</h4>
+          </div>
+          <div class="appointment-details">
+            <p><strong>Date:</strong> Wednesday, October 16, 2024</p>
+            <p><strong>Time:</strong> 10:00 AM</p>
+            <p><strong>Doctor:</strong> Dr. Evelyn Reed</p>
+            <p><strong>Reason:</strong> Annual check-up</p>
+          </div>
+          <div class="appointment-actions">
+            <button class="action-button reschedule-button">Reschedule</button>
+            <button class="action-button cancel-button">Cancel</button>
+          </div>
+        </div>
+
+        <!-- Past Appointment 1 -->
+        <div class="appointment-card past">
+          <div class="appointment-header">
+            <h4>Past Appointment</h4>
+          </div>
+          <div class="appointment-details">
+            <p><strong>Date:</strong> Friday, July 12, 2024</p>
+            <p><strong>Time:</strong> 02:30 PM</p>
+            <p><strong>Doctor:</strong> Dr. Samuel Carter</p>
+            <p><strong>Reason:</strong> Follow-up on lab results</p>
+          </div>
+        </div>
+
+        <!-- Past Appointment 2 -->
+        <div class="appointment-card past">
+          <div class="appointment-header">
+            <h4>Past Appointment</h4>
+          </div>
+          <div class="appointment-details">
+            <p><strong>Date:</strong> Monday, April 22, 2024</p>
+            <p><strong>Time:</strong> 09:00 AM</p>
+            <p><strong>Doctor:</strong> Dr. Evelyn Reed</p>
+            <p><strong>Reason:</strong> Flu symptoms</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="book-appointment-section">
+      <h2>Book a New Appointment</h2>
+      <div class="booking-form-container">
+        <div class="doctor-search-bar">
+          <input type="text" placeholder="Search for a doctor by name or specialty.">
+          <button class="search-button">Search</button>
+        </div>
+        <div class="booking-form">
+          <div class="form-group">
+            <label for="doctor">Select Doctor</label>
+            <select id="doctor" required>
+              <option value="">-- Choose a doctor --</option>
+              <option value="evelyn-reed">Dr. Evelyn Reed (Internal Medicine)</option>
+              <option value="samuel-carter">Dr. Samuel Carter (Pediatrics)</option>
+              <option value="isabella-cruz">Dr. Isabella Cruz (Dermatology)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="date">Select Date</label>
+            <input type="date" id="date" required>
+          </div>
+          <div class="form-group">
+            <label for="time">Select Time</label>
+            <input type="time" id="time" required>
+          </div>
+          <div class="form-group full-width">
+            <label for="reason">Reason for Visit</label>
+            <textarea id="reason" placeholder="Briefly describe your reason for the visit."></textarea>
+          </div>
+          <div class="form-buttons">
+            <button type="submit" class="book-now-button">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="contact-info">
+        <h4>Contact Us</h4>
+        <p>123 Medical Way, Healthville, HJ 12345</p>
+        <p>Email: info@healthjunction.com</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul class="quick-links">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      &copy; 2024 Health Junction Medical Center. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+
+</html>

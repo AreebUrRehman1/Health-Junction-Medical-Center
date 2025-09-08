@@ -11,12 +11,15 @@ import { TermsOfServicePage } from './pages/TermsOfServicePage';
 import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
 import { DoctorsPage } from './pages/DoctorsPage';
 import { CareersPage } from './pages/CareersPage';
-import { DashboardPage } from './pages/Doctors/DashboardPage';
+import { DashboardPage as DoctorDashboardPage } from './pages/Doctors/DashboardPage';
 import { PatientListPage } from './pages/Doctors/PatientListPage';
 import { PatientRecordPage } from './pages/Doctors/PatientRecordPage';
 import { PrescriptionPage } from './pages/Doctors/PrescriptionPage';
 import { SchedulePage } from './pages/Doctors/SchedulePage';
+import { DashboardPage as PatientDashboardPage } from './pages/Patient/DashboardPage';
 import { patientDetails as defaultPatientDetails } from './utils/patient-data';
+import { MedicalRecordsPage } from './pages/Patient/MedicalRecordsPage';
+import { BookAppointmentPage } from './pages/Patient/BookAppointmentPage';
 import './App.css';
 
 dayjs.extend(weekday);
@@ -119,11 +122,14 @@ function App() {
       <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="doctors" element={<DoctorsPage />} />
       <Route path="careers" element={<CareersPage />} />
-      <Route path="doctor-dashboard" element={<DashboardPage setRememberMeCount={setRememberMeCount} totalAppointments={totalAppointments} appointments={appointments} totalWeeklyAppointments={totalWeeklyAppointments} />} />
+      <Route path="doctor-dashboard" element={<DoctorDashboardPage setRememberMeCount={setRememberMeCount} totalAppointments={totalAppointments} appointments={appointments} totalWeeklyAppointments={totalWeeklyAppointments} />} />
       <Route path="patient-list" element={<PatientListPage />} />
       <Route path="patient-record/:patientId" element={<PatientRecordPage patientDetails={patientDetails} updatePatientMedicalHistory={updatePatientMedicalHistory} addPatientDiagnosis={addPatientDiagnosis} updatePatientMedications={updatePatientMedications} />} />
       <Route path="prescription" element={<PrescriptionPage />} />
       <Route path="doctor-schedule" element={<SchedulePage appointments={appointments} setAppointments={setAppointments} />} />
+      <Route path="patient-dashboard" element={<PatientDashboardPage />} />
+      <Route path="medical-records" element={<MedicalRecordsPage />} />
+      <Route path="book-appointment" element={<BookAppointmentPage />} />
     </Routes>
   );
 }
